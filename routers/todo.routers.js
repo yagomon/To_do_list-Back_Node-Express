@@ -37,6 +37,7 @@ router.get('/findById/:id', async (req, res) => {
     })
 });
 
+//update
 router.put("/update/:id", async(req, res) =>{
     await Todo.updateOne({_id : req.params.id}, req.body)
     .then(() => {
