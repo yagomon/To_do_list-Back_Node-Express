@@ -3,7 +3,20 @@ if(process.env.NODE_ENV !== 'production'){
 }
 
 const express = require('express');
-const cors = require('cors')
+const cors = require('cors');
+
+// const whitelist = ['http://localhost:3002', 'http://example2.com']
+// const corsOptions = {
+//     origin: function (origin, callback) {
+//         if (whitelist.indexOf(origin) !== -1) {
+//         callback(null, true)
+//         } else {
+//         callback(new Error('Not allowed by CORS'))
+//         }
+//     },
+
+//     optionsSucessStatus:200,
+// }
 
 const corsOptions = {
     origin:'http://localhost:3002',
