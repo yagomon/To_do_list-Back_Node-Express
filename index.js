@@ -5,23 +5,28 @@ if(process.env.NODE_ENV !== 'production'){
 const express = require('express');
 const cors = require('cors');
 
-const whitelist = ['http://localhost:3000', 'https://to-do-list-tarafas-front.herokuapp.com/']
-const corsOptions = {
-    origin: function (origin, callback) {
-        if (whitelist.indexOf(origin) !== -1) {
-        callback(null, true)
-        } else {
-        callback(new Error('Not allowed by CORS'))
-        }
-    },
+// const whitelist = ['http://localhost:3000', 'http://example2.com']
+// const corsOptions = {
+//     origin: function (origin, callback) {
+//         if (whitelist.indexOf(origin) !== -1) {
+//         callback(null, true)
+//         } else {
+//         callback(new Error('Not allowed by CORS'))
+//         }
+//     },
 
-    optionsSucessStatus:200,
-}
+//     optionsSucessStatus:200,
+// }
+
+// const corsOptions = {
+//     origin:'http://localhost:3000',
+//     optionsSucessStatus:200,
+// }
 
 
 const app = express();
 app.use(express.json());
-app.use(cors(corsOptions));
+app.use(cors());
 
 const Conn = require('./models/conn/conn');
 
